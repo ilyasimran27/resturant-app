@@ -9,6 +9,7 @@ import axios from "axios";
 import Order from "./modal/Order.mjs";
 import Cart from "./modal/Cart.mjs";
 import e from "express";
+import crypto from 'crypto';
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -37,7 +38,7 @@ const LaunchRequestHandler = {
   },
   async handle(handlerInput) {
     const speechText =
-      "Welcome to restaurant application, I am your virtual assistance. you can ask for the menu";
+      "Welcome to Zamzam restaurant, I am your virtual assistance. you can ask for the menu";
     const reprompt = "I am your virtual assistant. you can ask for the menu";
 
     await setUserData();
@@ -364,7 +365,6 @@ const CheckoutIntentHandler = {
   async handle(handlerInput) {
 
     try {
-      console.log("working")
       const apiAccessToken = Alexa.getApiAccessToken(
         handlerInput.requestEnvelope
       );
@@ -439,7 +439,8 @@ const skillBuilder = SkillBuilders.custom()
     ShowMenuIntentHandler,
     AddToCartIntentHandler,
     ShowCartIntentHandler,
-    ClearCartIntentHandler
+    ClearCartIntentHandler,
+    CheckoutIntentHandler
   )
   .addErrorHandlers(ErrorHandler);
 const skill = skillBuilder.create();
