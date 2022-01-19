@@ -10,6 +10,6 @@ const card = mongoose.Schema({
     createdOn: { type: Date, default: Date.now },
 })
 
-const Cart = mongoose.model("zamzam-cart", card)
+const Cart = mongoose.model("resturantCart", card)
 
 export default Cart;

@@ -37,7 +37,7 @@ const LaunchRequestHandler = {
   },
   async handle(handlerInput) {
     const speechText =
-      "Welcome to Zamzam restaurant, I am your virtual assistance. you can ask for the menu";
+      "Welcome to restaurant application, I am your virtual assistance. you can ask for the menu";
     const reprompt = "I am your virtual assistant. you can ask for the menu";
 
     await setUserData();
